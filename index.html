@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แผนธุรกิจน้ำมันนวด: เจาะตลาดร้านนวดเพื่อสุขภาพ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Kanit', sans-serif;
+            background-color: #F0F8FF;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .stat-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            text-align: center;
+        }
+        .section-title {
+            color: #004481;
+            font-weight: 700;
+            font-size: 2.25rem;
+            line-height: 2.5rem;
+            border-bottom: 3px solid #00B4D8;
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        .card {
+             background-color: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        .timeline-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+        .timeline-date {
+            min-width: 6rem;
+            font-weight: 600;
+            color: #0077B6;
+            margin-right: 1rem;
+        }
+        .timeline-content {
+            flex-grow: 1;
+            padding-left: 1rem;
+            border-left: 2px solid #00B4D8;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-12 relative">
+            <h1 class="text-4xl md:text-5xl font-bold mb-2" style="color: #004481;">แผนธุรกิจน้ำมันนวด</h1>
+            <p class="text-xl md:text-2xl" style="color: #0077B6;">เจาะตลาดร้านนวดเพื่อสุขภาพในประเทศไทย</p>
+            <div class="absolute top-4 right-4 w-16 h-16 bg-blue-500 rounded-lg flex items-center justify-center text-white font-bold text-sm shadow-md">
+                <!-- ตรงนี้คือตำแหน่งสำหรับใส่รูปภาพโลโก้ของคุณ -->
+                <img src="./images/LogoAquaGoal.jpg" alt="" class="w-full h-full object-contain rounded-lg">
+            </div>
+        </header>
+
+        <section id="opportunity" class="mb-16">
+            <h2 class="section-title text-center">1. โอกาสทางการตลาดที่สดใส</h2>
+            <p class="text-center max-w-3xl mx-auto mb-8 text-lg">
+                อุตสาหกรรมการท่องเที่ยวเชิงสุขภาพของไทยเติบโตอย่างต่อเนื่อง สร้างโอกาสมหาศาลสำหรับผลิตภัณฑ์น้ำมันนวดคุณภาพสูงที่ตอบโจทย์ความต้องการของผู้ประกอบการ
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="stat-card flex flex-col justify-center items-center">
+                    <span class="text-6xl mb-2">🏢</span>
+                    <p class="text-lg font-semibold" style="color: #0077B6;">จำนวนร้านนวดและสปา</p>
+                    <p class="text-5xl font-bold" style="color: #004481;">16,609+</p>
+                    <p class="text-md">แห่งทั่วประเทศ</p>
+                </div>
+                <div class="stat-card flex flex-col justify-center items-center">
+                    <span class="text-6xl mb-2">💰</span>
+                    <p class="text-lg font-semibold" style="color: #0077B6;">มูลค่าตลาดปี 2568 (คาดการณ์)</p>
+                    <p class="text-5xl font-bold" style="color: #004481;">587</p>
+                    <p class="text-md">ล้านบาท</p>
+                </div>
+                 <div class="stat-card flex flex-col justify-center items-center">
+                    <span class="text-6xl mb-2">📈</span>
+                    <p class="text-lg font-semibold" style="color: #0077B6;">อัตราการเติบโตของตลาด</p>
+                    <p class="text-5xl font-bold" style="color: #004481;">6%</p>
+                    <p class="text-md">ต่อปี</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="product-showcase" class="mb-16">
+            <h2 class="section-title text-center">2. ผลิตภัณฑ์ของเรา</h2>
+            <p class="text-center max-w-3xl mx-auto mb-8 text-lg">
+                นำเสนอผลิตภัณฑ์น้ำมันนวดคุณภาพสูงภายใต้แบรนด์ AimthaiCare ทั้งขนาดสำหรับทดลองและขนาดสำหรับธุรกิจ
+            </p>
+            <div class="card p-4">
+                <div class="relative w-full overflow-hidden rounded-lg shadow-lg mb-4 clickable-image cursor-pointer" style="padding-top: 56.25%;">
+                    <img class="absolute top-0 left-0 w-full h-full object-cover" src="./images/aimthaicare.jpg" alt="ภาพสินค้า AimthaiCare">
+                </div>
+                <p class="text-center text-gray-600 text-sm">
+                    ภาพตัวอย่างสินค้า: ขวดขนาด 300 มล. (ซ้าย) และแกลลอนขนาด 3000 มล. (ขวา)
+                </p>
+            </div>
+        </section>
+
+        <section id="competitors" class="mb-16">
+            <h2 class="section-title text-center">3. ตลาดน้ำมันนวดร้านนวดเพื่อสุภาพทั่วไป</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="card">
+                     <h3 class="text-2xl font-bold text-center mb-4" style="color: #004481;">การเปรียบเทียบราคาคู่แข่ง (3000 มล.)</h3>
+                    <p class="text-center mb-4">
+                        แบรนด์ของเราจะวางตำแหน่งในราคาที่แข่งขันได้ โดยเน้นคุณภาพที่เหนือกว่าในระดับราคาใกล้เคียงกัน
+                    </p>
+                    <div class="chart-container h-80 md:h-96">
+                        <canvas id="competitorPriceChart"></canvas>
+                    </div>
+                </div>
+                <div class="card">
+                     <h3 class="text-2xl font-bold text-center mb-4" style="color: #004481;">ตำแหน่งทางการตลาด</h3>
+                     <p class="text-center mb-4">
+                        เรามุ่งเป้าไปที่ช่องว่างของตลาดที่ต้องการ "คุณภาพพรีเมียมในราคาที่เข้าถึงได้"
+                    </p>
+                    <div class="relative w-full h-80 md:h-96 border-l-2 border-b-2 border-gray-400 p-2">
+                         <div class="absolute -left-4 bottom-1/2 -translate-y-1/2 -rotate-90 text-gray-600 font-semibold">คุณภาพ</div>
+                         <div class="absolute -bottom-8 left-1/2 -translate-x-1/2 text-gray-600 font-semibold">ราคา</div>
+                         
+                         <div class="absolute left-[10%] bottom-[20%] p-2 bg-red-100 rounded-lg text-center shadow">
+                             <p class="font-bold text-red-700">Carebeau</p>
+                             <p class="text-sm text-red-600">ราคาประหยัด</p>
+                         </div>
+                         <div class="absolute right-[10%] top-[20%] p-2 bg-yellow-100 rounded-lg text-center shadow">
+                             <p class="font-bold text-yellow-700">Anothai</p>
+                             <p class="text-sm text-yellow-600">สินค้านำเข้า</p>
+                         </div>
+                         <div class="absolute left-[25%] top-[5%] p-2 bg-blue-100 rounded-lg text-center shadow">
+                             <p class="font-bold text-blue-700">แบรนด์ของเรา</p>
+                              <p class="text-sm text-blue-600">คุณภาพสูง, คุ้มค่า</p>
+                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-2xl font-bold text-center mt-12 mb-6" style="color: #004481;">ภาพสินค้าคู่แข่ง</h3>
+            <p class="text-center max-w-3xl mx-auto mb-8 text-lg">
+                ตัวอย่างบรรจุภัณฑ์ของแบรนด์คู่แข่งในตลาด
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="card p-4 text-center clickable-image cursor-pointer">
+                    <div class="relative w-full overflow-hidden rounded-lg shadow-lg mb-4" style="padding-top: 177.77%;">
+                        <img class="absolute top-0 left-0 w-full h-full object-cover" src="./images/oilscare.JPG" alt="ภาพสินค้า Carebeau">
+                    </div>
+                    <p class="font-semibold" style="color: #0077B6;">Carebeau Massage Oil</p>
+                </div>
+                <div class="card p-4 text-center clickable-image cursor-pointer">
+                    <div class="relative w-full overflow-hidden rounded-lg shadow-lg mb-4" style="padding-top: 177.77%;">
+                        <img class="absolute top-0 left-0 w-full h-full object-cover" src="./images/oilanothai.JPG" alt="ภาพสินค้า Anothai">
+                    </div>
+                    <p class="font-semibold" style="color: #0077B6;">Anothai Massage Oil</p>
+                </div>
+                <div class="card p-4 text-center clickable-image cursor-pointer">
+                    <div class="relative w-full overflow-hidden rounded-lg shadow-lg mb-4" style="padding-top: 177.77%;">
+                        <img class="absolute top-0 left-0 w-full h-full object-cover" src="./images/oiltiktok.jpg" alt="ภาพสินค้าคู่แข่ง X">
+                    </div>
+                    <p class="font-semibold" style="color: #0077B6;">คู่แข่งอื่นๆ</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="cost-per-unit" class="mb-16">
+            <h2 class="section-title text-center">4. ต้นทุนการดำเนินการต่อชิ้น</h2>
+            <p class="text-center max-w-3xl mx-auto mb-8 text-lg">
+                ด้วยการเป็นโรงงานผลิตเอง เราสามารถลดต้นทุนคนกลาง ทำให้ราคาแข่งขันได้สูง
+            </p>
+            <div class="card max-w-2xl mx-auto">
+                <div class="grid grid-cols-2 gap-4 text-lg">
+                    <div class="font-semibold" style="color: #0077B6;">รายการ</div>
+                    <div class="font-semibold text-right" style="color: #0077B6;">ต้นทุน (บาท/ชิ้น 3000 มล.)</div>
+                    <div class="col-span-2 border-b border-gray-200 mb-2"></div>
+                    <div>แกลลอน (3000 มล.)</div>
+                    <div class="text-right">22.00</div>
+                    <div>สติ๊กเกอร์</div>
+                    <div class="text-right">3.00</div>
+                    <div>ค่าลังลูกฟูก (บรรจุ 4 แกลลอน)</div>
+                    <div class="text-right">7.50</div>
+                    <div>ค่าแรงบรรจุแพค</div>
+                    <div class="text-right">6.00</div>
+                    <div>น้ำมัน Bulk/แกลลอน (3000 มล.)</div>
+                    <div class="text-right">150.00</div>
+                    <div class="col-span-2 border-t-2 border-gray-400 mt-2 pt-2"></div>
+                    <div class="font-bold text-xl" style="color: #004481;">ต้นทุนรวมต่อชิ้น</div>
+                    <div class="font-bold text-xl text-right" style="color: #004481;">188.50</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="initial-cost" class="mb-16">
+            <h2 class="section-title text-center">5. ทุนเริ่มต้นในการผลิต</h2>
+            <p class="text-center max-w-3xl mx-auto mb-8 text-lg">
+                เราจะผลิตเฉพาะตัวอย่างสินค้าและรวบรวมคำสั่งซื้อก่อนการผลิตจริง เพื่อลดความเสี่ยงและต้นทุนจม
+            </p>
+            <div class="card max-w-2xl mx-auto">
+                <div class="grid grid-cols-2 gap-4 text-lg">
+                    <div class="font-semibold" style="color: #0077B6;">รายการ</div>
+                    <div class="font-semibold text-right" style="color: #0077B6;">ต้นทุน (บาท)</div>
+                    <div class="col-span-2 border-b border-gray-200 mb-2"></div>
+                    <div>ตัวอย่างสินค้า 3000 มล. (100 ชิ้น @ 188.50 บาท)</div>
+                    <div class="text-right">18850.00</div>
+                    <div>ตัวอย่างสินค้า 300 มล. (200 ชิ้น @ 28.00 บาท)</div>
+                    <div class="text-right">5,600.00</div>
+                    <div class="col-span-2 border-t-2 border-gray-400 mt-2 pt-2"></div>
+                    <div class="font-bold text-xl" style="color: #004481;">รวมทุนเริ่มต้นในการผลิตตัวอย่าง ( ไม่รวมค่าจดแจ้ง )</div>
+                    <div class="font-bold text-xl text-right" style="color: #004481;">24,450.00</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="strategy" class="mb-16">
+            <h2 class="section-title text-center">6. แผนการดำเนินงานและเป้าหมาย</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="card">
+                    <h3 class="text-2xl font-bold text-center mb-4" style="color: #004481;">เป้าหมายยอดขายปี 2568 (2025)</h3>
+                    <p class="text-center mb-4">
+                        สร้างฐานลูกค้าและเพิ่มการรับรู้แบรนด์ในตลาด (นับจากเดือนสิงหาคม 2568)
+                    </p>
+                     <div class="space-y-6">
+                        <div class="text-center">
+                            <p class="text-lg font-semibold" style="color: #0077B6;">เป้าหมายเชิงปริมาณ</p>
+                            <p class="text-5xl font-bold" style="color: #004481;">10,000</p>
+                            <p class="text-md">ขวด (3000 มล.)</p>
+                            <p class="text-sm text-gray-600 mt-2">
+                                (เฉลี่ย 2,000 ขวดต่อเดือน x 5 เดือน)
+                            </p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-lg font-semibold" style="color: #0077B6;">เป้าหมายเชิงมูลค่า</p>
+                            <p class="text-5xl font-bold" style="color: #004481;">2.95</p>
+                             <p class="text-md">ล้านบาท (ที่ราคาโปรโมชั่น)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3 class="text-2xl font-bold text-center mb-4" style="color: #004481;">เป้าหมายส่วนแบ่งตลาดปี 2569 (2026)</h3>
+                    <p class="text-center mb-4">
+                        เราตั้งเป้าหมายเชิงรุกที่ 5% ของมูลค่าตลาดรวมในปี 2026
+                    </p>
+                    <div class="chart-container h-80 md:h-96">
+                        <canvas id="marketShareChart"></canvas>
+                    </div>
+                </div>
+                <div class="card md:col-span-2">
+                    <h3 class="text-2xl font-bold text-center mb-4" style="color: #004481;">เป้าหมายยอดขายปี 2569 (2026) </h3>
+                     <div class="space-y-6 flex flex-col md:flex-row justify-around items-center">
+                        <div class="text-center">
+                            <p class="text-lg font-semibold" style="color: #0077B6;">เป้าหมายเชิงปริมาณ</p>
+                            <p class="text-5xl font-bold" style="color: #004481;">100,000</p>
+                            <p class="text-md">ขวด (ขนาด 3000 มล.) ต่อปี</p>
+                             <p class="text-sm text-gray-600 mt-2">
+                                (เฉลี่ยประมาณ 8,333 ขวดต่อเดือน)
+                            </p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-lg font-semibold" style="color: #0077B6;">เป้าหมายเชิงมูลค่า</p>
+                            <p class="text-5xl font-bold" style="color: #004481;">31.2</p>
+                             <p class="text-md">ล้านบาท (ที่ราคาปกติ)</p>
+                            <p class="text-sm text-gray-600 mt-2">
+                                (คิดเป็นส่วนแบ่งตลาดประมาณ 5% ของมูลค่าตลาดรวมปี 2569)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="timeline" class="mb-16">
+            <h2 class="section-title text-center">7. แผนการดำเนินงาน (Timeline)</h2>
+            <p class="text-center max-w-3xl mx-auto mb-8 text-lg">
+                การวางแผนที่ชัดเจนเพื่อการเปิดตัวและการขยายตลาดอย่างมีประสิทธิภาพ
+            </p>
+            <div class="card max-w-3xl mx-auto p-6">
+                <div class="timeline-item">
+                    <div class="timeline-date">กรกฎาคม (ก.ค.)</div>
+                    <div class="timeline-content">
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>ออกแบบฉลากและชื่อแบรนด์</li>
+                            <li>จดแจ้ง อย. และกำหนดเงื่อนไขการจำหน่าย</li>
+                            <li>กำหนดค่าขนส่งและเตรียมการ</li>
+                            <li>เตรียมข้อมูลและทำสื่อภาพสำหรับโพสต์ขายบนแพลตฟอร์ม</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">สิงหาคม (ส.ค.)</div>
+                    <div class="timeline-content">
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>เริ่มโพสต์ขายบนแพลตฟอร์มออนไลน์ต่างๆ</li>
+                            <li>วิเคราะห์ข้อมูลและผลตอบรับจากลูกค้า</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">กันยายน (ก.ย.)</div>
+                    <div class="timeline-content">
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>นำข้อมูลจากเดือน ส.ค. มาปรับกลยุทธ์การขาย</li>
+                            <li>เพิ่มช่องทางการขาย: เริ่มให้เซลล์เข้าหาร้านนวดเพื่อสุขภาพ</li>
+                            <li>เพิ่มช่องทางการขาย: เริ่มเจรจากับผู้ประกอบการค้าส่ง</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="swot" class="mb-16">
+            <h2 class="section-title text-center">8. การวิเคราะห์ SWOT</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="card border-t-4 border-green-400">
+                    <h3 class="font-bold text-xl mb-2 text-green-700">💪 จุดแข็ง (Strengths)</h3>
+                    <ul class="list-disc list-inside space-y-1 text-gray-700">
+                        <li>ควบคุมต้นทุนและคุณภาพได้</li>
+                        <li>เพิ่มคุณภาพด้วย Vit E และน้ำมันละหุ่ง</li>
+                        <li>มีความยืดหยุ่นในการพัฒนาสูตร</li>
+                        <li>มุ่งเน้นตลาดร้านนวดโดยตรง</li>
+                    </ul>
+                </div>
+                <div class="card border-t-4 border-red-400">
+                    <h3 class="font-bold text-xl mb-2 text-red-700">⛓️ จุดอ่อน (Weaknesses)</h3>
+                    <ul class="list-disc list-inside space-y-1 text-gray-700">
+                        <li>แบรนด์ใหม่ ยังไม่เป็นที่รู้จัก</li>
+                        <li>เครือข่ายจัดจำหน่ายจำกัด</li>
+                        <li>กำลังการผลิตเริ่มต้นมีจำกัด</li>
+                    </ul>
+                </div>
+                <div class="card border-t-4 border-blue-400">
+                    <h3 class="font-bold text-xl mb-2 text-blue-700">💡 โอกาส (Opportunities)</h3>
+                    <ul class="list-disc list-inside space-y-1 text-gray-700">
+                        <li>ตลาดสปาเติบโตต่อเนื่อง</li>
+                        <li>ต้องการสินค้าคุณภาพราคาดี</li>
+                        <li>ช่องทางออนไลน์เข้าถึงง่าย</li>
+                    </ul>
+                </div>
+                 <div class="card border-t-4 border-yellow-400">
+                    <h3 class="font-bold text-xl mb-2 text-yellow-700">⛈️ อุปสรรค (Threats)</h3>
+                    <ul class="list-disc list-inside space-y-1 text-gray-700">
+                        <li>การแข่งขันจากเจ้าตลาดสูง</li>
+                        <li>สงครามราคาในตลาดล่าง</li>
+                        <li>ราคาวัตถุดิบผันผวน</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="go-to-market" class="mb-16">
+            <h2 class="section-title text-center">9. กลยุทธ์การเข้าสู่ตลาด</h2>
+            <p class="text-center max-w-3xl mx-auto mb-8 text-lg">
+                เราใช้กลยุทธ์แบบผสมผสานทั้งออนไลน์และออฟไลน์เพื่อเข้าถึงผู้ประกอบการร้านนวดอย่างครอบคลุมและสร้างความสัมพันธ์ที่แข็งแกร่ง
+            </p>
+            <div class="card">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4 text-center" style="color: #004481;">ช่องทางการจัดจำหน่าย</h3>
+                        <div class="space-y-4">
+                            <div class="p-4 border rounded-lg">
+                                <h4 class="font-bold text-lg" style="color:#0077B6;">🌐 ออนไลน์</h4>
+                                <ul class="list-disc list-inside ml-4">
+                                    <li>Lazada / Shopee Official Store</li>
+                                    <li>เว็บไซต์ของแบรนด์ (B2B E-commerce)</li>
+                                    <li>Line Official Account / Facebook & TikTok Shop</li>
+                                </ul>
+                            </div>
+                             <div class="p-4 border rounded-lg">
+                                <h4 class="font-bold text-lg" style="color:#0077B6;">? ออฟไลน์</h4>
+                                <ul class="list-disc list-inside ml-4">
+                                    <li>ทีมขายตรงเข้าถึงร้านนวด</li>
+                                    <li>ตัวแทนจำหน่ายอุปกรณ์สปา</li>
+                                    <li>งานแสดงสินค้าและสัมนา</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-center mb-4" style="color: #004481;">แนวทางการทำให้ร้านค้าเปลี่ยนมาใช้</h3>
+                        <div class="space-y-4">
+                           <div class="flex items-start space-x-3">
+                                <span class="text-2xl pt-1">🎁</span>
+                                <div>
+                                    <h4 class="font-bold">เสนอชุดทดลองใช้ฟรี</h4>
+                                    <p>สร้างความมั่นใจในคุณภาพก่อนตัดสินใจซื้อ</p>
+                                </div>
+                           </div>
+                           <div class="flex items-start space-x-3">
+                                <span class="text-2xl pt-1">🤝</span>
+                                <div>
+                                    <h4 class="font-bold">ทีมขายตรงสาธิตคุณภาพ</h4>
+                                    <p>ให้หมอนวดได้สัมผัสเนื้อผลิตภัณฑ์และเปรียบเทียบ</p>
+                                </div>
+                           </div>
+                            <div class="flex items-start space-x-3">
+                                <span class="text-2xl pt-1">✨</span>
+                                <div>
+                                    <h4 class="font-bold">ชูจุดขายที่เหนือกว่า</h4>
+                                    <p>เน้นความคุ้มค่า คุณภาพ และผลลัพธ์ที่ดีต่อลูกค้า</p>
+                                </div>
+                           </div>
+                            <div class="flex items-start space-x-3">
+                                <span class="text-2xl pt-1">💯</span>
+                                <div>
+                                    <h4 class="font-bold">โปรโมชั่นพิเศษสำหรับลูกค้าใหม่</h4>
+                                    <p>ราคาเปิดตัว 295 บาท (ต่ำกว่า Carebeau 5%)</p>
+                                </div>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="sales-strategy-2026" class="mb-16">
+            <h2 class="section-title text-center">10. กลยุทธ์การขายปี 2569 (2026) เพื่อเป้าหมาย 5%</h2>
+            <p class="text-center max-w-3xl mx-auto mb-8 text-lg">
+                เพื่อบรรลุเป้าหมายส่วนแบ่งตลาด 5% เราจะขยายการเข้าถึงและสร้างความร่วมมือกับพันธมิตรที่แข็งแกร่ง
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="card">
+                    <h3 class="text-2xl font-bold mb-4 text-center" style="color: #004481;">การเพิ่มทีมเซลล์และขยายพื้นที่</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <span class="text-2xl pt-1">👥</span>
+                            <div>
+                                <h4 class="font-bold">ขยายทีมขายตรง</h4>
+                                <p>เพิ่มจำนวนพนักงานขายเพื่อเข้าเยี่ยมร้านนวดในพื้นที่ต่างๆ ให้ครอบคลุมมากขึ้น โดยเฉพาะในจังหวัดที่มีศักยภาพการเติบโตของธุรกิจสปา</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <span class="text-2xl pt-1">🗺️</span>
+                            <div>
+                                <h4 class="font-bold">เจาะตลาดต่างจังหวัดและเมืองท่องเที่ยวรอง</h4>
+                                <p>ส่งทีมเซลล์ลงพื้นที่ต่างจังหวัดและเมืองท่องเที่ยวรองที่มีร้านนวดจำนวนมาก เพื่อสร้างการรับรู้และขยายฐานลูกค้าใหม่</p>
+                            </div>
+                        </div>
+                         <div class="flex items-start space-x-3">
+                            <span class="text-2xl pt-1">📊</span>
+                            <div>
+                                <h4 class="font-bold">ระบบ CRM สำหรับทีมขาย</h4>
+                                <p>นำระบบบริหารความสัมพันธ์ลูกค้า (CRM) มาใช้เพื่อติดตามการเยี่ยมร้าน, บันทึกข้อมูลลูกค้า, และวางแผนการขายอย่างมีประสิทธิภาพ</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3 class="text-2xl font-bold mb-4 text-center" style="color: #004481;">การร่วมมือกับผู้ประกอบการค้าส่ง</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <span class="text-2xl pt-1">📦</span>
+                            <div>
+                                <h4 class="font-bold">สร้างพันธมิตรกับผู้ค้าส่งหลัก</h4>
+                                <p>เจรจาและสร้างความร่วมมือกับผู้ค้าส่งผลิตภัณฑ์สปาและอุปกรณ์ความงามรายใหญ่ เพื่อให้สินค้าของเราเข้าถึงร้านนวดได้กว้างขวางขึ้น</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <span class="text-2xl pt-1">📈</span>
+                            <div>
+                                <h4 class="font-bold">ข้อเสนอพิเศษสำหรับผู้ค้าส่ง</h4>
+                                <p>จัดโปรโมชั่นและราคาพิเศษสำหรับผู้ค้าส่ง เพื่อจูงใจให้สั่งซื้อในปริมาณมากและผลักดันสินค้าสู่ตลาด</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <span class="text-2xl pt-1">📚</span>
+                            <div>
+                                <h4 class="font-bold">การอบรมและสนับสนุนผู้ค้าส่ง</h4>
+                                <p>จัดอบรมให้ความรู้เกี่ยวกับผลิตภัณฑ์แก่ทีมขายของผู้ค้าส่ง และมอบสื่อการตลาดเพื่อช่วยในการนำเสนอสินค้า</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 hidden p-4">
+        <div class="relative w-full h-full flex items-center justify-center">
+            <button id="closeModal" class="absolute top-2 right-2 text-white text-4xl font-bold leading-none z-10">&times;</button>
+            <img id="modalImage" src="" alt="Expanded Image" class="max-w-full max-h-full object-contain rounded-lg shadow-xl">
+        </div>
+    </div>
+
+    <script>
+        function wrapLabel(str, maxWidth) {
+            if (str.length <= maxWidth) {
+                return str;
+            }
+            const words = str.split(' ');
+            let lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + word).length > maxWidth) {
+                    lines.push(currentLine.trim());
+                    currentLine = '';
+                }
+                currentLine += word + ' ';
+            }
+            lines.push(currentLine.trim());
+            return lines.filter(line => line.length > 0);
+        }
+
+        const tooltipTitleCallback = function(tooltipItems) {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+              return label.join(' ');
+            } else {
+              return label;
+            }
+        };
+
+        const sharedTooltipOptions = {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: tooltipTitleCallback
+                    }
+                }
+            }
+        };
+
+        const competitorPriceCtx = document.getElementById('competitorPriceChart').getContext('2d');
+        new Chart(competitorPriceCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Carebeau (ปกติ)', 'เรา (โปรโมชั่น)', 'เรา (ปกติ)', 'Anothai (เทียบเท่า)'],
+                datasets: [{
+                    label: 'ราคา (บาท) ต่อ 3000 มล.',
+                    data: [312, 295, 312, 455],
+                    backgroundColor: ['#CAF0F8', '#FF0000', '#0077B6', '#004481'],
+                    borderColor: '#004481',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    ...sharedTooltipOptions.plugins,
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'ราคา (บาท)'
+                        }
+                    }
+                }
+            }
+        });
+
+        const marketShareCtx = document.getElementById('marketShareChart').getContext('2d');
+        new Chart(marketShareCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['เป้าหมายของเรา (5%)', 'ตลาดส่วนที่เหลือ (95%)'],
+                datasets: [{
+                    data: [5, 95],
+                    backgroundColor: ['#00B4D8', '#ADE8F4'],
+                    borderColor: '#FFFFFF',
+                    borderWidth: 2,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    ...sharedTooltipOptions.plugins,
+                    legend: {
+                        position: 'bottom',
+                    },
+                    title: {
+                        display: true,
+                        text: 'ส่วนแบ่งตลาดเป้าหมายปี 2569 (2026)'
+                    }
+                }
+            }
+        });
+
+        // Image Modal Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const clickableImages = document.querySelectorAll('.clickable-image');
+            const imageModal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            const closeModalBtn = document.getElementById('closeModal');
+
+            clickableImages.forEach(container => {
+                container.addEventListener('click', function() {
+                    const img = container.querySelector('img');
+                    if (img) {
+                        modalImage.src = img.src;
+                        imageModal.classList.remove('hidden');
+                    }
+                });
+            });
+
+            closeModalBtn.addEventListener('click', function() {
+                imageModal.classList.add('hidden');
+                modalImage.src = ''; // Clear image src to save memory
+            });
+
+            // Close modal if clicking outside the image but within the modal background
+            imageModal.addEventListener('click', function(event) {
+                if (event.target === imageModal) {
+                    imageModal.classList.add('hidden');
+                    modalImage.src = '';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
